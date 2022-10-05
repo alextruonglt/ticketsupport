@@ -1,4 +1,6 @@
 const asyncHandler = require("express-async-handler")
+const bcrypt = require("bcryptjs")
+const User = require("../models/userModel")
 
 // @ desc Regiser a new user
 // @route /api/users
@@ -13,6 +15,10 @@ const registerUser = asyncHandler(async(req, res ) =>{
         res.status(400)
         throw new Error("please include all fields")
     }
+
+    // Find if user alead
+
+
     res.send("Register Route")
 }) 
 
